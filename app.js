@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // creating database
-mongoose.connect("mongodb+srv://rmoray11:Sincostan9%40@cluster0.qvjgby3.mongodb.net/todolistDB")
+mongoose.connect("mongodb+srv://rmoray11:Sincostan9%40@cluster0.qvjgby3.mongodb.net/todolistDB", { useNewUrlParser: true })
 
 const itemSchema = {
   name: String
