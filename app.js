@@ -1,4 +1,4 @@
-//jshint esversion:6
+
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -76,7 +76,7 @@ app.post("/", function(req, res){
 });
 
 app.post("/delete",function(req,res){
-  console.log("deleted")
+
   const checklist = req.body.checkbox
   Item.findByIdAndRemove(checklist,function(err){
     if(!err){
@@ -96,10 +96,7 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-let port = process.env.PORT;
-if(port == null || port ==""){
-  port = 3000;
-}
+
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
